@@ -1,0 +1,273 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Styling header */
+.header {
+	width: 100%;
+	background-color: black;
+	color: white;
+	height: 80px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-size: 8vw;
+}
+
+section {
+	padding: 0px 10px;
+}
+
+h2 {
+	font-size: 6vw;
+}
+
+/* Styling article header */
+.title {
+	float: left;
+}
+
+.year {
+	float: right;
+}
+
+.article-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.event {
+	background-color: #F4DFB4;
+	margin: 10px auto;
+	padding: 10px 10px;
+}
+
+.more {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+summary {
+	font-size: 20px;
+}
+
+/* hide full event discreption */
+.details {
+	display: none;
+}
+
+.description {
+	margin: 10px 0px;
+	font-size: 16px;
+}
+
+/* Stling images */
+.image {
+	width: 100%;
+	height: 30vw;
+	max-height: 320px;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Placing images in figures as background image */
+figure#schrift {
+	background-image: url("img/schrift.jpg");
+}
+
+figure#screens {
+	background-image: url("img/beeldscherm.png");
+}
+
+figure#www {
+	background-image: url("img/www.png");
+}
+
+figure#html {
+	background-image: url("img/HTML.png");
+}
+
+figure#css {
+	background-image: url("img/CSS.png");
+}
+
+figure#phone {
+	background-image: url("img/telefoon.png");
+}
+
+figure#movable {
+	background-image: url("img/type.jpg");
+}
+
+figure#responsive {
+	background-image: url("img/responsive.png");
+}
+/* Media Queries */
+/* Look timeline */
+@media only screen and (min-width: 620px) {
+	main {
+		position: relative;
+	}
+
+	main::before {
+		content: "";
+		position: absolute;
+		top: -10px;
+		bottom: -10px;
+		width: 6px;
+		background-color: #000;
+	}
+
+	.event {
+		position: relative;
+		padding: 15px 15px;
+	}
+
+	.event::before {
+		content: "";
+		position: absolute;
+		top: 20px;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background-color: white;
+		border: 5px solid #000;
+	}
+
+	.more {
+		display: none;
+	}
+
+	.details {
+		display: block;
+	}
+}
+
+
+/* Tablet Timeline */
+@media only screen and (min-width: 620px) and (max-width: 1149px) {
+	h2 {
+		font-size: 4vw;
+	}
+
+	main {
+		padding-left: 60px;
+		padding-right: 20px;
+	}
+
+	main::before {
+		left: 32px;
+	}
+
+	.event::before {
+		left: -47px;
+	}
+}
+
+/* Laptop Timeline */
+@media only screen and (min-width: 850px) and (max-width: 1149px) {
+	h1 {
+		font-size: 5vw;
+	}
+
+	.details {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.details p, .details figure {
+		width: 48%;
+	}
+}
+
+/* Desktop timeline */
+@media only screen and (min-width: 1150px) {
+	h1 {
+		font-size: 3vw;
+	}
+
+	h2 {
+		font-size: 2.5vw;
+	}
+
+	section {
+		padding: 0 40px;
+	}
+
+	/* */
+	.event:nth-child(odd) .article-header {
+		flex-direction: row-reverse;
+	}
+
+	main::before {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	/* Make the events appear alternately */
+	.event:nth-child(even)::before {
+		left: -40px;
+		transform: translateX(-50%);
+	}
+
+	.event:nth-child(odd)::before {
+		right: -40px;
+		transform: translateX(50%);
+	}
+
+	.event {
+		width: calc(50% - 40px);
+	}
+
+	.event:nth-child(even) {
+		margin-left: calc(50% + 40px);
+	}
+
+	.event:nth-child(odd) {
+		margin-right: calc(50% + 40px);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
